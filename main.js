@@ -368,62 +368,62 @@ const initPageTransitions = () => {
     };
 
     const openPortfolio = () => {
+        const isHeroVisible = !heroSection.classList.contains('is-hidden');
         const tl = gsap.timeline();
-        tl.to([
-            '.hero__heading',
-            '.hero__photo-wrapper',
-            '.hero__green-circle',
-            '.hero__circle-outline',
-            '.hero__text-left',
-            '.hero__text-right',
-            '.hero__tagline',
-            '.hero__nav',
-            '.hero__mobile-nav'
-        ], {
-            opacity: 0,
-            duration: 0.5,
-            stagger: 0.03,
-            ease: 'power2.in'
-        });
 
-        tl.to(heroSection, {
-            opacity: 0, 
-            duration: 0.3,
-            onComplete: () => {
-                heroSection.classList.add('is-hidden');
-                portfolioSection.classList.add('is-active');
-                gsap.set(portfolioSection, { visibility: 'visible' });
-                if (window.syncPortfolioIndicator) window.syncPortfolioIndicator();
-            }
-        });
+        if (isHeroVisible) {
+            tl.to([
+                '.hero__heading',
+                '.hero__photo-wrapper',
+                '.hero__green-circle',
+                '.hero__circle-outline',
+                '.hero__text-left',
+                '.hero__text-right',
+                '.hero__tagline',
+                '.hero__nav',
+                '.hero__mobile-nav'
+            ], {
+                opacity: 0,
+                duration: 0.5,
+                stagger: 0.03,
+                ease: 'power2.in'
+            });
+
+            tl.to(heroSection, {
+                opacity: 0, 
+                duration: 0.3,
+                onComplete: () => {
+                    heroSection.classList.add('is-hidden');
+                }
+            });
+        }
+
+        tl.add(() => {
+            portfolioSection.classList.add('is-active');
+            gsap.set(portfolioSection, { visibility: 'visible' });
+            if (window.syncPortfolioIndicator) window.syncPortfolioIndicator();
+        }, isHeroVisible ? 0.8 : 0);
 
         tl.to(portfolioSection, {
             opacity: 1,
             duration: 0.6,
             ease: 'power2.out',
             onComplete: () => {
-                // Ensure everything inside is visible
                 gsap.set(['.portfolio__nav', '.portfolio__back', '.portfolio__subtitle', '.portfolio__tagline'], { opacity: 1 });
                 if (window.syncPortfolioIndicator) window.syncPortfolioIndicator();
             }
-        }, '-=0.2');
+        }, isHeroVisible ? 0.6 : 0);
 
         tl.fromTo(['.portfolio__nav', '.portfolio__back', '.portfolio__subtitle', '.portfolio__tagline'],
             { opacity: 0, y: -10 },
             { opacity: 1, duration: 0.8, stagger: 0.05, ease: 'power2.out' },
-            '-=0.4'
+            isHeroVisible ? 0.8 : 0.2
         );
 
         tl.fromTo('.portfolio__card', 
             { opacity: 0, y: 60 },
-            { 
-                opacity: 1, 
-                y: 0, 
-                duration: 0.8, 
-                stagger: 0.15, 
-                ease: 'power3.out' 
-            }, 
-            '-=0.3'
+            { opacity: 1, y: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out' }, 
+            isHeroVisible ? 0.9 : 0.3
         );
     };
 
@@ -455,40 +455,47 @@ const initPageTransitions = () => {
     };
 
     const openAbout = () => {
+        const isHeroVisible = !heroSection.classList.contains('is-hidden');
         const tl = gsap.timeline();
-        tl.to(heroSection, {
-            opacity: 0,
-            duration: 0.5,
-            onComplete: () => {
-                heroSection.classList.add('is-hidden');
-                aboutSection.classList.add('is-active');
-                gsap.set(aboutSection, { visibility: 'visible' });
-                if (window.syncAboutIndicator) window.syncAboutIndicator();
-            }
-        });
+        
+        if (isHeroVisible) {
+            tl.to(heroSection, {
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                    heroSection.classList.add('is-hidden');
+                }
+            });
+        }
+        
+        tl.add(() => {
+            aboutSection.classList.add('is-active');
+            gsap.set(aboutSection, { visibility: 'visible' });
+            if (window.syncAboutIndicator) window.syncAboutIndicator();
+        }, isHeroVisible ? 0.5 : 0);
 
         tl.to(aboutSection, {
             opacity: 1,
             duration: 0.8,
             ease: 'power2.out'
-        });
+        }, isHeroVisible ? 0.5 : 0);
 
         tl.fromTo('.about__orbit', 
             { scale: 0.8, opacity: 0 },
             { scale: 1, opacity: 1, duration: 1.8, stagger: 0.1, ease: 'expo.out' },
-            '-=0.5'
+            isHeroVisible ? 0.8 : 0.3
         );
 
         tl.fromTo('.about__memory',
             { scale: 0, opacity: 0 },
             { scale: 1, opacity: 1, duration: 1.2, stagger: 0.15, ease: 'back.out(1.7)' },
-            '-=1.2'
+            isHeroVisible ? 0.6 : 0.1
         );
 
         tl.fromTo(['.about__photo-wrapper', '.about__bio > *'],
             { y: 50, opacity: 0 },
             { y: 0, opacity: 1, duration: 1.2, stagger: 0.15, ease: 'power3.out' },
-            '-=1.0'
+            isHeroVisible ? 0.8 : 0.3
         );
     };
 
@@ -506,27 +513,34 @@ const initPageTransitions = () => {
     };
 
     const openExpertise = () => {
+        const isHeroVisible = !heroSection.classList.contains('is-hidden');
         const tl = gsap.timeline();
-        tl.to([heroSection, portfolioSection, aboutSection], {
-            opacity: 0,
-            duration: 0.5,
-            onComplete: () => {
-                heroSection.classList.add('is-hidden');
-                portfolioSection.classList.remove('is-active');
-                aboutSection.classList.remove('is-active');
-                expertiseSection.classList.add('is-active');
-                expertiseSection.scrollTop = 0; // Reset scroll to top so tabs are visible on mobile
-                gsap.set(expertiseSection, { visibility: 'visible' });
-                if (window.syncExpertiseIndicator) window.syncExpertiseIndicator();
-                if (window.playExpertiseEntrance) window.playExpertiseEntrance();
-            }
-        });
+
+        if (isHeroVisible) {
+            tl.to([heroSection, portfolioSection, aboutSection], {
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                    heroSection.classList.add('is-hidden');
+                }
+            });
+        }
+
+        tl.add(() => {
+            portfolioSection.classList.remove('is-active');
+            aboutSection.classList.remove('is-active');
+            expertiseSection.classList.add('is-active');
+            expertiseSection.scrollTop = 0;
+            gsap.set(expertiseSection, { visibility: 'visible' });
+            if (window.syncExpertiseIndicator) window.syncExpertiseIndicator();
+            if (window.playExpertiseEntrance) window.playExpertiseEntrance();
+        }, isHeroVisible ? 0.5 : 0);
 
         tl.to(expertiseSection, {
             opacity: 1,
             duration: 0.8,
             ease: 'power2.out'
-        });
+        }, isHeroVisible ? 0.5 : 0);
     };
 
     const closeExpertise = () => {
@@ -543,8 +557,10 @@ const initPageTransitions = () => {
     };
 
     const openContact = () => {
+        const isHeroVisible = !heroSection.classList.contains('is-hidden');
         const tl = gsap.timeline();
-        if (!heroSection.classList.contains('is-hidden')) {
+
+        if (isHeroVisible) {
             tl.to([
                 '.hero__heading', '.hero__photo-wrapper',
                 '.hero__green-circle', '.hero__circle-outline',
@@ -558,31 +574,24 @@ const initPageTransitions = () => {
                 opacity: 0, 
                 duration: 0.3,
                 onComplete: () => {
-                    contactSection.classList.add('is-active');
-                    gsap.set(contactSection, { visibility: 'visible' });
-                    gsap.set('.contact__content', { display: 'flex', opacity: 1, y: 0 });
-                    gsap.set('.contact__form-wrapper', { display: 'none', opacity: 0 });
-                    if (window.syncContactIndicator) window.syncContactIndicator();
-                }
-            });
-        } else {
-            tl.to({}, { 
-                duration: 0.1, 
-                onComplete: () => {
-                    contactSection.classList.add('is-active');
-                    gsap.set(contactSection, { visibility: 'visible' });
-                    gsap.set('.contact__content', { display: 'flex', opacity: 1, y: 0 });
-                    gsap.set('.contact__form-wrapper', { display: 'none', opacity: 0 });
-                    if (window.syncContactIndicator) window.syncContactIndicator();
+                    heroSection.classList.add('is-hidden');
                 }
             });
         }
+
+        tl.add(() => {
+            contactSection.classList.add('is-active');
+            gsap.set(contactSection, { visibility: 'visible' });
+            gsap.set('.contact__content', { display: 'flex', opacity: 1, y: 0 });
+            gsap.set('.contact__form-wrapper', { display: 'none', opacity: 0 });
+            if (window.syncContactIndicator) window.syncContactIndicator();
+        }, isHeroVisible ? 0.8 : 0);
 
         tl.to(contactSection, {
             opacity: 1,
             duration: 0.8,
             ease: 'power2.out'
-        });
+        }, isHeroVisible ? 0.8 : 0);
         
         tl.from('.contact__title, .contact__actions, .contact__divider, .contact__socials, .contact__email, .contact__nav', {
             opacity: 0,
@@ -590,7 +599,7 @@ const initPageTransitions = () => {
             duration: 0.8,
             stagger: 0.1,
             ease: "power3.out"
-        }, "-=0.4");
+        }, isHeroVisible ? 1.0 : 0.2);
     };
 
     const closeContact = () => {
