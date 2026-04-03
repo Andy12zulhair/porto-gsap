@@ -245,12 +245,20 @@ const initPageTransitions = () => {
             if (mobileMenu) mobileMenu.classList.remove('is-active');
             
             const page = link.getAttribute('data-page');
+            
+            // Immediate transition for mobile
+            const isMobile = window.innerWidth <= 768;
+            const delay = isMobile ? 100 : 200;
+
             setTimeout(() => {
+                // If moving from a subpage to another subpage, we can just trigger the open function
+                // as they have overlapping z-indexes and the new one will cover the old one,
+                // then we clean up the old one's classes.
                 if (page === 'portfolio') openPortfolio();
                 if (page === 'about') openAbout();
                 if (page === 'expertise') openExpertise();
                 if (page === 'contact') openContact();
-            }, 200); // reduced from 400ms to 200ms for snappier feel
+            }, delay);
         });
     });
 
@@ -264,19 +272,31 @@ const initPageTransitions = () => {
             const page = link.getAttribute('data-page');
             
             let closedSomething = false;
+            const isMobile = window.innerWidth <= 768;
             
-            if(aboutSection.classList.contains('is-active')) { closeAbout(); closedSomething = true; }
-            if(portfolioSection.classList.contains('is-active')) { closePortfolio(); closedSomething = true; }
-            if(expertiseSection.classList.contains('is-active')) { closeExpertise(); closedSomething = true; }
-            if(contactSection.classList.contains('is-active')) { closeContact(); closedSomething = true; }
+            if(aboutSection.classList.contains('is-active')) { if(!isMobile) closeAbout(); closedSomething = true; }
+            if(portfolioSection.classList.contains('is-active')) { if(!isMobile) closePortfolio(); closedSomething = true; }
+            if(expertiseSection.classList.contains('is-active')) { if(!isMobile) closeExpertise(); closedSomething = true; }
+            if(contactSection.classList.contains('is-active')) { if(!isMobile) closeContact(); closedSomething = true; }
             
-            const delay = closedSomething ? 600 : 0;
+            // On mobile, we skip the 600ms closing delay to make it instant
+            const delay = isMobile ? 50 : (closedSomething ? 600 : 0);
             
             setTimeout(() => {
                 if (page === 'portfolio') openPortfolio();
                 if (page === 'about') openAbout();
                 if (page === 'expertise') openExpertise();
                 if (page === 'contact') openContact();
+                
+                // Final cleanup for mobile to ensure sections don't stack underneath
+                if (isMobile) {
+                    setTimeout(() => {
+                        if (page !== 'about') aboutSection.classList.remove('is-active');
+                        if (page !== 'portfolio') portfolioSection.classList.remove('is-active');
+                        if (page !== 'expertise') expertiseSection.classList.remove('is-active');
+                        if (page !== 'contact') contactSection.classList.remove('is-active');
+                    }, 500);
+                }
             }, delay);
         });
     });
