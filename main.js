@@ -918,24 +918,24 @@ const initExpertiseInteractions = () => {
             desc: "Builds robust architectures and scalable solutions to ensure high performance across varied platforms.",
             tags: ["AI Agent Dev", "Testing & Debugging", "Analytics", "Web Monitoring", "Webflow Dev", "Writing Clean Code"],
             images: [
-                './public/expertise/Dev/AI-Agent.jpeg',
-                './public/expertise/Dev/Testing-debugging.jpeg',
-                './public/expertise/Dev/analytics.png',
-                './public/expertise/Dev/monitoring web.png',
-                './public/expertise/Dev/webflow.png',
-                './public/expertise/Dev/writing-code.png'
+                './expertise/Dev/AI-Agent.jpeg',
+                './expertise/Dev/Testing-debugging.jpeg',
+                './expertise/Dev/analytics.png',
+                './expertise/Dev/monitoring web.png',
+                './expertise/Dev/webflow.png',
+                './expertise/Dev/writing-code.png'
             ]
         },
         badges: {
             desc: "Professional certifications and skill badges acquired through continuous learning.",
             tags: ["Sertifikat 1", "Sertifikat 2", "Sertifikat 3", "Sertifikat 4", "Sertifikat 5", "Sertifikat 6"],
             images: [
-                './public/expertise/Skill Badge/Sertifikat1.png',
-                './public/expertise/Skill Badge/Sertifikat2.png',
-                './public/expertise/Skill Badge/Sertifikat3.png',
-                './public/expertise/Skill Badge/Sertifikat4.png',
-                './public/expertise/Skill Badge/Sertifikat5.png',
-                './public/expertise/Skill Badge/Sertifikat6.png'
+                './expertise/Skill Badge/Sertifikat1.png',
+                './expertise/Skill Badge/Sertifikat2.png',
+                './expertise/Skill Badge/Sertifikat3.png',
+                './expertise/Skill Badge/Sertifikat4.png',
+                './expertise/Skill Badge/Sertifikat5.png',
+                './expertise/Skill Badge/Sertifikat6.png'
             ]
         }
     };
