@@ -1220,16 +1220,26 @@ const initAboutInteractions = () => {
 
 const initMemoryLightbox = () => {
     const memories = document.querySelectorAll('.about__memory');
+    const profilePhoto = document.querySelector('.about__photo');
     const lightbox = document.getElementById('memoryLightbox');
     const lightboxImg = document.getElementById('memoryLightboxImage');
     const btnClose = document.getElementById('memoryClose');
     const btnNext = document.getElementById('memoryNext');
     const btnPrev = document.getElementById('memoryPrev');
 
-    if (!lightbox || memories.length === 0) return;
+    if (!lightbox) return;
+
+    // Combine all photos (floating memories + profile photo)
+    const galleryItems = Array.from(memories);
+    if (profilePhoto) galleryItems.push(profilePhoto);
+    
+    if (galleryItems.length === 0) return;
 
     let currentIdx = 0;
-    const sources = Array.from(memories).map(m => m.querySelector('img').src);
+    const sources = galleryItems.map(m => {
+        const img = m.tagName === 'IMG' ? m : m.querySelector('img');
+        return img ? img.src : '';
+    }).filter(src => src !== '');
 
     const updateImage = (index, direction = 1) => {
         currentIdx = index;
@@ -1285,9 +1295,9 @@ const initMemoryLightbox = () => {
         });
     };
 
-    memories.forEach((mem, index) => {
-        mem.style.cursor = 'pointer';
-        mem.addEventListener('click', () => openLightbox(index));
+    galleryItems.forEach((item, index) => {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', () => openLightbox(index));
     });
 
     btnClose.addEventListener('click', closeLightbox);
