@@ -250,7 +250,7 @@ const initPageTransitions = () => {
                 if (page === 'about') openAbout();
                 if (page === 'expertise') openExpertise();
                 if (page === 'contact') openContact();
-            }, 400); // give menu time to fade out before animating hero
+            }, 200); // reduced from 400ms to 200ms for snappier feel
         });
     });
 
