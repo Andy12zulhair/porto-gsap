@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andi Zulhair — Web Developer & Data Analyst</title>
+    <meta name="description" content="I create digital experiences where end users feel cared for.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    
+    <!-- Open Graph / SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://andizulhair.com/">
+    <meta property="og:title" content="Andi Zulhair — Web Developer & Data Analyst">
+    <meta property="og:description" content="I build efficient, data-driven digital solutions with a focus on user experience.">
+    <meta property="og:image" content="/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://andizulhair.com/">
+    <meta property="twitter:title" content="Andi Zulhair — Web Developer & Data Analyst">
+    <meta property="twitter:description" content="I build efficient, data-driven digital solutions with a focus on user experience.">
+    <meta property="twitter:image" content="/og-image.png">
+</head>
+
+<body>
+    <!-- ===== PRELOADER ===== -->
+    <div id="preloader" class="preloader">
+        <div class="preloader__content">
+            <span class="preloader__name">Andi Zulhair</span>
+            <div class="preloader__bar">
+                <div class="preloader__progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== GRAIN OVERLAY ===== -->
+    <div id="grained-container" class="grained-container"></div>
+    <!-- ===== LANDING PAGE (Hero) ===== -->
+    <section class="hero" id="heroSection">
+        <div class="hero__outer-circle"></div>
+        <div class="hero__circle-outline"></div>
+        <div class="hero__green-circle" id="greenCircle"></div>
+
+        <div class="hero__heading">
+            <span class="hero__greeting">Hello, I'm</span>
+            <span class="hero__name">Andi Zulhair</span>
+        </div>
+
+        <a href="#" class="hero__nav hero__nav--top-left" data-nav="about" data-page="about">about me</a>
+        <a href="#" class="hero__nav hero__nav--top-right" data-nav="portfolio" data-page="portfolio">portfolio</a>
+        <a href="#" class="hero__nav hero__nav--bottom-left" data-nav="expertise" data-page="expertise">expertise</a>
+        <a href="#" class="hero__nav hero__nav--bottom-right" data-nav="contact" data-page="contact">contact</a>
+        <div class="hero__photo-wrapper">
+            <img src="/Foto1.png" alt="Andi Zulhair" class="hero__photo">
+        </div>
+        <div class="hero__text-left">
+            <div class="hero__star">✳</div>
+            <p class="hero__description">
+                I build digital solutions<br>
+                that are efficient<br>
+                <em>data driven, and user focused</em>
+            </p>
+        </div>
+
+        <div class="hero__text-right">
+            <div class="hero__star">✳</div>
+            <p class="hero__description">
+                Web Developer<br>
+                Data Analyst<br>
+                <em>Available for work</em>
+            </p>
+        </div>
+
+        <div class="hero__tagline">
+            Designed and developed by Andi Zulhair
+        </div>
+
+        <div class="hero__mobile-nav">
+            <svg viewBox="0 0 24 24" fill="none" class="hero__mobile-hamburger">
+                <path d="M4 6h16M4 12h16M4 18h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>navigation</span>
+        </div>
+    </section>
+
+    <!-- ===== PORTFOLIO PAGE ===== -->
+    <section class="portfolio" id="portfolioSection" data-lenis-prevent>
+        <div class="portfolio__outer-circle"></div>
+        <div class="portfolio__circle-outline"></div>
+        <div class="portfolio__nav-indicator"></div>
+
+        <!-- Back to home -->
+        <a href="#" class="portfolio__back" id="backToHome">← back to home</a>
+
+        <!-- Nav corners (persistent) -->
+        <a href="#" class="portfolio__nav portfolio__nav--top-left" data-page="about">about me</a>
+        <div class="portfolio__nav portfolio__nav--top-right portfolio__nav--active">
+            <span>portfolio</span>
+        </div>
+        <a href="#" class="portfolio__nav portfolio__nav--bottom-left" data-page="expertise">expertise</a>
+        <a href="#" class="portfolio__nav portfolio__nav--bottom-right" data-page="contact">contact</a>
+
+        <!-- Subtitle -->
+        <p class="portfolio__subtitle">
+            A collection of digital solutions<br>
+            created <i>with focus</i> on<br>
+            <span class="portfolio__link">user experience & data integrity</span>
+        </p>
+
+        <!-- Project Cards -->
+        <div class="portfolio__grid">
+            <!-- Project 1 -->
+            <article class="portfolio__card">
+                <div class="portfolio__card-image">
+                    <img src="/portofolio/siakad.png" alt="Express Project">
+                    <div class="portfolio__card-overlay">
+                        <h3 class="portfolio__card-title">SIAKAD<br>Academic System</h3>
+                    </div>
+                </div>
+                <div class="portfolio__card-footer">
+                    <div class="portfolio__card-label-wrap">
+                        <span class="portfolio__card-label portfolio__card-label--cat">web development</span>
+                        <span class="portfolio__card-label portfolio__card-label--more">learn more</span>
+                    </div>
+                    <span class="portfolio__card-arrow">→</span>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="portfolio__card">
+                <div class="portfolio__card-image">
+                    <img src="/portofolio/TMS-elite.png" alt="Signal26 Project">
+                    <div class="portfolio__card-overlay">
+                        <h3 class="portfolio__card-title">TMS Elite</h3>
+                        <p class="portfolio__card-desc">Delivery Tracking<br>Application</p>
+                    </div>
+                </div>
+                <div class="portfolio__card-footer">
+                    <div class="portfolio__card-label-wrap">
+                        <span class="portfolio__card-label portfolio__card-label--cat">web development</span>
+                        <span class="portfolio__card-label portfolio__card-label--more">learn more</span>
+                    </div>
+                    <span class="portfolio__card-arrow">→</span>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="portfolio__card">
+                <div class="portfolio__card-image">
+                    <img src="/portofolio/SPB-Desa.png" alt="Metrum Group Project">
+                    <div class="portfolio__card-overlay">
+                        <h3 class="portfolio__card-title">SPB Desa</h3>
+                        <p class="portfolio__card-desc">BPS Data Collection<br>System</p>
+                    </div>
+                </div>
+                <div class="portfolio__card-footer">
+                    <div class="portfolio__card-label-wrap">
+                        <span class="portfolio__card-label portfolio__card-label--cat">data engineering · development</span>
+                        <span class="portfolio__card-label portfolio__card-label--more">learn more</span>
+                    </div>
+                    <span class="portfolio__card-arrow">→</span>
+                </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="portfolio__card">
+                <div class="portfolio__card-image">
+                    <img src="/portofolio/Kmp.png" alt="HealthSync Project">
+                    <div class="portfolio__card-overlay">
+                        <h3 class="portfolio__card-title">KMP Analytics</h3>
+                        <p class="portfolio__card-desc">Data-driven tracking<br>dashboard</p>
+                    </div>
+                </div>
+                <div class="portfolio__card-footer">
+                    <div class="portfolio__card-label-wrap">
+                        <span class="portfolio__card-label portfolio__card-label--cat">data analytics · development</span>
+                        <span class="portfolio__card-label portfolio__card-label--more">learn more</span>
+                    </div>
+                    <span class="portfolio__card-arrow">→</span>
+                </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="portfolio__card">
+                <div class="portfolio__card-image">
+                    <img src="/portofolio/Ecommerce-Web.png" alt="E-Commerce Project">
+                    <div class="portfolio__card-overlay">
+                        <h3 class="portfolio__card-title">Digital Storefront</h3>
+                        <p class="portfolio__card-desc">Modern E-Commerce<br>Platform</p>
+                    </div>
+                </div>
+                <div class="portfolio__card-footer">
+                    <div class="portfolio__card-label-wrap">
+                        <span class="portfolio__card-label portfolio__card-label--cat">frontend developer</span>
+                        <span class="portfolio__card-label portfolio__card-label--more">learn more</span>
+                    </div>
+                    <span class="portfolio__card-arrow">→</span>
+                </div>
+            </article>
+
+            <!-- Project 6 -->
+            <article class="portfolio__card">
+                <div class="portfolio__card-image">
+                    <img src="/portofolio/face-editor.png" alt="Face Editor Project">
+                    <div class="portfolio__card-overlay">
+                        <h3 class="portfolio__card-title">Face Editor</h3>
+                        <p class="portfolio__card-desc">Interactive image<br>manipulation tool</p>
+                    </div>
+                </div>
+                <div class="portfolio__card-footer">
+                    <div class="portfolio__card-label-wrap">
+                        <span class="portfolio__card-label portfolio__card-label--cat">software development</span>
+                        <span class="portfolio__card-label portfolio__card-label--more">learn more</span>
+                    </div>
+                    <span class="portfolio__card-arrow">→</span>
+                </div>
+            </article>
+        </div>
+
+        <!-- Bottom tagline -->
+        <div class="portfolio__tagline">
+            Designed and developed by Andi Zulhair
+        </div>
+
+        <!-- Mobile Bottom Bar -->
+        <div class="portfolio__mobile-bottom-bar about__mobile-bottom-bar">
+            <a href="#" class="about__mobile-btn" id="backToHomeFromPortfolioMobile">
+                <span>← back to home</span>
+            </a>
+            <div class="about__mobile-btn" id="portfolioMobileNavTrigger">
+                <svg viewBox="0 0 24 24" fill="none" class="hero__mobile-hamburger" style="width:20px;height:20px;">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>navigation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT PAGE ===== -->
+    <section class="about" id="aboutSection" data-lenis-prevent>
+        <!-- Background Orbits -->
+        <div class="about__orbit about__orbit--1"></div>
+        <div class="about__orbit about__orbit--2"></div>
+        <div class="about__orbit about__orbit--3"></div>
+
+        <!-- Floating Memories (Photos on orbits) -->
+        <div class="about__memory about__memory--1"><img src="/about me/01.jpg" alt="Memory 1"></div>
+        <div class="about__memory about__memory--2"><img src="/about me/02.jpg" alt="Memory 2"></div>
+        <div class="about__memory about__memory--3"><img src="/about me/03.JPG" alt="Memory 3"></div>
+        <div class="about__memory about__memory--4"><img src="/about me/04.JPG" alt="Memory 4"></div>
+        <div class="about__memory about__memory--5"><img src="/about me/05.jpg" alt="Memory 5"></div>
+
+        <div class="about__container">
+            <!-- Nav Indicator -->
+            <div class="about__nav-indicator"></div>
+
+            <!-- Back to home -->
+            <a href="#" class="about__back" id="backToHomeFromAbout">← back to home</a>
+
+            <!-- Nav corners -->
+            <a href="#" class="about__nav about__nav--top-left about__nav--active" data-page="about">about me</a>
+            <a href="#" class="about__nav about__nav--top-right" data-page="portfolio">portfolio</a>
+            <a href="#" class="about__nav about__nav--bottom-left" data-page="expertise">expertise</a>
+            <a href="#" class="about__nav about__nav--bottom-right" data-page="contact">contact</a>
+
+            <!-- Main Content -->
+            <div class="about__content">
+                <div class="about__photo-wrapper">
+                    <img src="/about me/06.jpeg" alt="Profile" class="about__photo">
+                </div>
+
+                <div class="about__bio">
+                    <p class="about__bio-main">
+                        I’m an Informatics Engineering graduate with <i>hands-on experience</i> in web development and
+                        data-driven projects. My background includes working on <i>large-scale data collection</i> at BPS and
+                        building web-based logistics systems.
+                    </p>
+                    <p class="about__bio-sub">
+                        I’m passionate about creating functional digital solutions. <i>I love solving technical challenges</i> and focus on continuously improving my technical skills through active development.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom tagline (Desktop) -->
+            <div class="about__tagline">
+                Designed and developed by Andi Zulhair
+            </div>
+            
+            <!-- Mobile Bottom Bar -->
+            <div class="about__mobile-bottom-bar">
+                <a href="#" class="about__mobile-btn" id="backToHomeFromAboutMobile">
+                    <span>← back to home</span>
+                </a>
+                <div class="about__mobile-btn" id="aboutMobileNavTrigger">
+                    <svg viewBox="0 0 24 24" fill="none" class="hero__mobile-hamburger" style="width:20px;height:20px;">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span>navigation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERTISE PAGE ===== -->
+    <section class="expertise" id="expertiseSection" data-lenis-prevent>
+        <div class="expertise__outer-circle"></div>
+        <div class="expertise__nav-indicator"></div>
+
+        <!-- Back to home -->
+        <a href="#" class="expertise__back" id="backToHomeFromExpertise">← back to home</a>
+
+        <!-- Header Tabs -->
+        <div class="expertise__tabs">
+            <button class="expertise__tab" data-tab="dev">DEV</button>
+            <button class="expertise__tab expertise__tab--active" data-tab="badges">Skill Badge</button>
+        </div>
+
+        <!-- Center Content -->
+        <div class="expertise__content">
+            <p class="expertise__description" id="expertiseDesc">
+                <!-- Injected via JS -->
+            </p>
+        </div>
+
+        <!-- Central Hover Image -->
+        <div class="expertise__hover-media">
+            <img src="" alt="Expertise context" id="expertiseHoverImg" class="expertise__hover-img">
+        </div>
+
+        <!-- Background Orbits (inner ones for tags) -->
+        <div class="expertise__orbit expertise__orbit--1"></div>
+        <div class="expertise__orbit expertise__orbit--2"></div>
+
+        <!-- Tags Container -->
+        <div class="expertise__tags" id="expertiseTags">
+            <!-- Tags injected via JS absolute positioning -->
+        </div>
+
+        <!-- Nav corners -->
+        <a href="#" class="expertise__nav expertise__nav--top-left" data-page="about">about me</a>
+        <a href="#" class="expertise__nav expertise__nav--top-right" data-page="portfolio">portfolio</a>
+        <a href="#" class="expertise__nav expertise__nav--bottom-left expertise__nav--active"
+            data-page="expertise">expertise</a>
+        <a href="#" class="expertise__nav expertise__nav--bottom-right" data-page="contact">contact</a>
+
+        <!-- Bottom tagline -->
+        <div class="expertise__tagline">
+            Designed and developed by Andi Zulhair
+        </div>
+
+        <!-- Mobile Bottom Bar -->
+        <div class="expertise__mobile-bar">
+            <div class="expertise__mobile-btn" id="backToHomeFromExpertiseMobile">
+                <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px;">
+                    <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>back to home</span>
+            </div>
+            <div class="expertise__mobile-btn" id="expertiseMobileNavTrigger">
+                <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px;">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>navigation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT PAGE ===== -->
+    <section class="contact" id="contactSection" data-lenis-prevent>
+        <div class="contact__outer-circle"></div>
+        <div class="contact__orbit contact__orbit--1"></div>
+        <div class="contact__nav-indicator"></div>
+
+        <!-- Back to home -->
+        <a href="#" class="contact__back" id="backToHomeFromContact">← back to home</a>
+
+        <!-- Center Content Container -->
+        <div class="contact__content">
+            <h1 class="contact__title">
+                <i>lets discuss</i><br>
+                your project
+            </h1>
+
+            <div class="contact__actions">
+                <a href="https://calendly.com/andi-zulhair46/30min" target="_blank" class="contact__btn contact__btn--primary">
+                    <svg class="contact__btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-.2 16c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.22 0 2.36.37 3.3.99l-1.39 1.76A4.015 4.015 0 0011.8 8c-2.21 0-4 1.79-4 4s1.79 4 4 4c.98 0 1.88-.35 2.58-.94l1.45 1.66c-1.12.82-2.51 1.28-4.03 1.28z" />
+                    </svg>
+                    Book Calendly call
+                    <svg class="contact__btn-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="7" y1="17" x2="17" y2="7"></line>
+                        <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                </a>
+                <a href="#" class="contact__btn contact__btn--secondary" id="openFormBtn">
+                    Submit a form
+                </a>
+            </div>
+
+            <p class="contact__divider">or <i>text me</i> a message</p>
+
+            <div class="contact__socials">
+                <!-- Social circle icons matching screenshot -->
+                <a href="https://t.me/andizh" target="_blank" class="contact__social-icon" aria-label="Telegram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/andi-zulhair-66b4911b6" target="_blank" class="contact__social-icon" aria-label="LinkedIn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/Andy12zulhair" target="_blank" class="contact__social-icon" aria-label="GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.113.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="contact__email" id="copyEmailWrapper">
+                <span>andi.zulhair46@gmail.com</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="contact__email-copy">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Form Container (Hidden by default) -->
+        <div class="contact__form-wrapper">
+            <form class="contact__form" id="contactForm">
+                <div class="contact__form-row">
+                    <div class="contact__form-group">
+                        <label for="fname">your name</label>
+                        <input type="text" id="fname" name="fname" placeholder="">
+                    </div>
+                    <div class="contact__form-group">
+                        <label for="cname">company name</label>
+                        <input type="text" id="cname" name="cname" placeholder="">
+                    </div>
+                </div>
+
+                <div class="contact__form-group">
+                    <label for="email">contact email</label>
+                    <input type="email" id="email" name="email" placeholder="">
+                </div>
+
+                <div class="contact__form-group">
+                    <label for="request">explain your request</label>
+                    <textarea id="request" name="request" rows="3" placeholder=""></textarea>
+                </div>
+
+                <button type="submit" class="contact__submit-btn">submit</button>
+            </form>
+
+            <button class="contact__close-form" id="closeFormBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                close form
+            </button>
+        </div>
+
+        <!-- Nav corners -->
+        <a href="#" class="contact__nav contact__nav--top-left" data-page="about">about me</a>
+        <a href="#" class="contact__nav contact__nav--top-right" data-page="portfolio">portfolio</a>
+        <a href="#" class="contact__nav contact__nav--bottom-left" data-page="expertise">expertise</a>
+        <a href="#" class="contact__nav contact__nav--bottom-right contact__nav--active" data-page="contact">contact</a>
+
+        <!-- Bottom tagline -->
+        <div class="contact__tagline">
+            Designed and developed by Andi Zulhair
+        </div>
+    </section>
+
+    <!-- ===== PROJECT DETAIL OVERLAY ===== -->
+    <section class="project-detail" id="projectDetail">
+        <div class="project-detail__container">
+            <!-- Left: Info -->
+            <div class="project-detail__info">
+                <div class="project-detail__group">
+                    <span class="project-detail__label">project</span>
+                    <h2 class="project-detail__title" id="detailTitle">YouHue</h2>
+                </div>
+
+                <div class="project-detail__group">
+                    <span class="project-detail__label">responsibilities</span>
+                    <p class="project-detail__value" id="detailResp">webflow developer</p>
+                </div>
+
+                <div class="project-detail__group">
+                    <span class="project-detail__label">team</span>
+                    <div class="project-detail__team" id="detailTeam">
+                        <!-- Avatars will be injected -->
+                    </div>
+                </div>
+
+                <div class="project-detail__group project-detail__group--desc">
+                    <span class="project-detail__label">project details</span>
+                    <p class="project-detail__description" id="detailDesc">
+                        YouHue is a unique digital platform where students can share their feelings...
+                    </p>
+                </div>
+
+                <a href="#" target="_blank" class="project-detail__link" id="detailLink">
+                    open website <span class="project-detail__link-arrow">↗</span>
+                </a>
+            </div>
+
+            <!-- Right: Media -->
+            <div class="project-detail__media">
+                <img src="" alt="Project Image" id="detailImage" class="project-detail__img">
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="project-detail__nav">
+            <button class="project-detail__btn" id="prevProject">← previous project</button>
+            <button class="project-detail__btn project-detail__btn--close" id="closeDetail">✕ close</button>
+            <button class="project-detail__btn" id="nextProject">next project →</button>
+        </div>
+    </section>
+
+    <!-- ===== MEMORY LIGHTBOX ===== -->
+    <section class="memory-lightbox" id="memoryLightbox">
+        <div class="memory-lightbox__container">
+            <img src="" alt="Memory Snapshot" id="memoryLightboxImage" class="memory-lightbox__img">
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="memory-lightbox__nav">
+            <button class="memory-lightbox__btn" id="memoryPrev">← previous</button>
+            <button class="memory-lightbox__btn memory-lightbox__btn--close" id="memoryClose">✕ close</button>
+            <button class="memory-lightbox__btn" id="memoryNext">next →</button>
+        </div>
+    </section>
+
+    <!-- ===== MOBILE MENU OVERLAY ===== -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__links">
+            <a href="#" class="mobile-menu__link" data-page="about">about me</a>
+            <a href="#" class="mobile-menu__link" data-page="portfolio">portfolio</a>
+            <a href="#" class="mobile-menu__link" data-page="expertise">expertise</a>
+            <a href="#" class="mobile-menu__link" data-page="contact">contact</a>
+        </div>
+        <button class="mobile-menu__close" id="mobileMenuClose">
+            <svg viewBox="0 0 24 24" fill="none" class="mobile-menu__close-icon">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>navigation</span>
+        </button>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
